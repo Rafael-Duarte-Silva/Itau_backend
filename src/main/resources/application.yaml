@@ -1,3 +1,6 @@
 spring:
-  application:
-    name: itau
+    application:
+        name: itau
+    sql:
+        init:
+            mode: always
