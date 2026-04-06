@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.itau.domain.Transaction;
 import com.example.itau.domain.TransactionRepository;
+import com.example.itau.dtos.StatisticsDTO;
 
 @Service
 public class TransactionService {
@@ -27,5 +28,9 @@ public class TransactionService {
 
     public void deleteAll() {
         repository.deleteAll();
+    }
+
+    public StatisticsDTO getStatistics() {
+        return repository.getStatistics();
     }
 }

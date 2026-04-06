@@ -12,6 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -78,6 +79,12 @@ class TransactionControllerTest {
     @Test
     void deleteAllTransactionsNoContentReturns200() throws Exception {
         mockMvc.perform(delete("/transacao"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    void getStatisticsNoContentReturns200() throws Exception {
+        mockMvc.perform(get("/estatistica"))
                 .andExpect(status().isOk());
     }
 }

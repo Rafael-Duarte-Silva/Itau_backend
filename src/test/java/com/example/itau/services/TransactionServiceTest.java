@@ -65,4 +65,11 @@ public class TransactionServiceTest {
 
         verify(repository).deleteAll();
     }
+
+    @Test
+    void getStatisticsWhenValidReturnStatisticsDTO() {
+        service.getStatistics();
+
+        verify(repository).getStatistics();
+    }
 }
