@@ -11,6 +11,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -24,7 +25,7 @@ class TransactionControllerTest {
     private TransactionService service;
 
     @Test
-    void shouldReturn201WhenTransactionIsValid() throws Exception {
+    void createTransactionValidTransactionReturns201() throws Exception {
         when(service.create(org.mockito.ArgumentMatchers.anyFloat(), org.mockito.ArgumentMatchers.any()))
                 .thenReturn(true);
 
@@ -42,7 +43,7 @@ class TransactionControllerTest {
     }
 
     @Test
-    void shouldReturn422WhenServiceRejects() throws Exception {
+    void createTransactionServiceRejectsTransactionReturns422() throws Exception {
         when(service.create(org.mockito.ArgumentMatchers.anyFloat(), org.mockito.ArgumentMatchers.any()))
                 .thenReturn(false);
 
@@ -60,7 +61,7 @@ class TransactionControllerTest {
     }
 
     @Test
-    void shouldReturn400WhenJsonIsInvalid() throws Exception {
+    void createTransactionInvalidJsonReturns400() throws Exception {
         String json = """
                 {
                     "valor": "abc",
@@ -72,5 +73,11 @@ class TransactionControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json))
                 .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void deleteAllTransactionsNoContentReturns200() throws Exception {
+        mockMvc.perform(delete("/transacao"))
+                .andExpect(status().isOk());
     }
 }

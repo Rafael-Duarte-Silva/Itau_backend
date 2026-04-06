@@ -24,4 +24,8 @@ public class TransactionService {
         repository.save(new Transaction(valor, dataHora));
         return true;
     }
+
+    public void deleteAll() {
+        repository.deleteAll();
+    }
 }

@@ -34,7 +34,7 @@ public class TransactionServiceTest {
     }
 
     @Test
-    void shouldReturnTrueWhenTransactionIsValid() {
+    void createTransactionValidTransactionReturnsTrue() {
         OffsetDateTime time = now.minusHours(1);
         when(repository.save(any(Transaction.class)))
                 .thenReturn(new Transaction(5.5f, time));
@@ -46,16 +46,23 @@ public class TransactionServiceTest {
     }
 
     @Test
-    void shouldReturnFalseWhenTransactionIsInFuture() {
+    void createTransactionTransactionInFutureReturnsFalse() {
         boolean result = service.create(5.5f, now.plusHours(1));
 
         assertFalse(result);
     }
 
     @Test
-    void shouldReturnFalseWhenAmountIsNegative() {
+    void createTransactionNegativeValorReturnsFalse() {
         boolean result = service.create(-1f, now.minusHours(1));
 
         assertFalse(result);
+    }
+
+    @Test
+    void deleteAllTransactionsAlwaysCallsRepositoryDeleteAll() {
+        service.deleteAll();
+
+        verify(repository).deleteAll();
     }
 }

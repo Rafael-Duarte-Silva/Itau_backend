@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.itau.dtos.TransactionCreateDTO;
 import com.example.itau.services.TransactionService;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
@@ -30,5 +31,11 @@ public class TransactionController {
         }
 
         return ResponseEntity.status(201).build();
+    }
+
+    @DeleteMapping
+    public ResponseEntity<Void> deleteAllTransaction() {
+        service.deleteAll();
+        return ResponseEntity.ok().build();
     }
 }
