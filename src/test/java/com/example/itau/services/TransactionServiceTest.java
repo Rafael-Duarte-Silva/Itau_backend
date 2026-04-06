@@ -6,6 +6,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -37,9 +38,9 @@ public class TransactionServiceTest {
     void createTransactionValidTransactionReturnsTrue() {
         OffsetDateTime time = now.minusHours(1);
         when(repository.save(any(Transaction.class)))
-                .thenReturn(new Transaction(5.5f, time));
+                .thenReturn(new Transaction(new BigDecimal("5.5"), time));
 
-        boolean result = service.create(5.5f, time);
+        boolean result = service.create(new BigDecimal("5.5"), time);
 
         assertTrue(result);
         verify(repository).save(any(Transaction.class));
@@ -47,14 +48,14 @@ public class TransactionServiceTest {
 
     @Test
     void createTransactionTransactionInFutureReturnsFalse() {
-        boolean result = service.create(5.5f, now.plusHours(1));
+        boolean result = service.create(new BigDecimal("5.5"), now.plusHours(1));
 
         assertFalse(result);
     }
 
     @Test
     void createTransactionNegativeValorReturnsFalse() {
-        boolean result = service.create(-1f, now.minusHours(1));
+        boolean result = service.create(new BigDecimal("-1"), now.minusHours(1));
 
         assertFalse(result);
     }

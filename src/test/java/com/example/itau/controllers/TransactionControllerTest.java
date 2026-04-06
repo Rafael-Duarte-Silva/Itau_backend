@@ -27,7 +27,7 @@ class TransactionControllerTest {
 
     @Test
     void createTransactionValidTransactionReturns201() throws Exception {
-        when(service.create(org.mockito.ArgumentMatchers.anyFloat(), org.mockito.ArgumentMatchers.any()))
+        when(service.create(org.mockito.ArgumentMatchers.any(), org.mockito.ArgumentMatchers.any()))
                 .thenReturn(true);
 
         String json = """
@@ -45,7 +45,7 @@ class TransactionControllerTest {
 
     @Test
     void createTransactionServiceRejectsTransactionReturns422() throws Exception {
-        when(service.create(org.mockito.ArgumentMatchers.anyFloat(), org.mockito.ArgumentMatchers.any()))
+        when(service.create(org.mockito.ArgumentMatchers.any(), org.mockito.ArgumentMatchers.any()))
                 .thenReturn(false);
 
         String json = """

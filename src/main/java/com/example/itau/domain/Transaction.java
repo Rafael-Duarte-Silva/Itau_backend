@@ -1,5 +1,6 @@
 package com.example.itau.domain;
 
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
 import jakarta.persistence.Entity;
@@ -16,10 +17,10 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private float valor;
+    private BigDecimal valor;
     private OffsetDateTime dataHora;
 
-    public Transaction(float valor, OffsetDateTime dataHora) {
+    public Transaction(BigDecimal valor, OffsetDateTime dataHora) {
         this.valor = valor;
         this.dataHora = dataHora;
     }

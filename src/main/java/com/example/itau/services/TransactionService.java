@@ -1,5 +1,6 @@
 package com.example.itau.services;
 
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
 import org.springframework.stereotype.Service;
@@ -16,9 +17,9 @@ public class TransactionService {
         this.repository = repository;
     }
 
-    public boolean create(float valor, OffsetDateTime dataHora) {
+    public boolean create(BigDecimal valor, OffsetDateTime dataHora) {
         boolean isFuture = dataHora.isAfter(OffsetDateTime.now());
-        if (isFuture || valor < 0) {
+        if (isFuture || valor.signum() < 0) {
             return false;
         }
 
