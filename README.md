@@ -17,3 +17,8 @@
 
 ## Error Handling
 - https://www.baeldung.com/exception-handling-for-rest-with-spring
+
+# Logs
+
+- https://mmarcosab.medium.com/criando-logs-em-aplica%C3%A7%C3%B5es-spring-boot-29d0ff366193
+- https://docs.spring.io/spring-boot/reference/features/logging.html
