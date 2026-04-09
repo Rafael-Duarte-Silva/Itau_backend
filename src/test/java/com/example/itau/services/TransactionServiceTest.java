@@ -17,7 +17,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.example.itau.domain.Transaction;
-import com.example.itau.domain.TransactionRepository;
+import com.example.itau.repositories.TransactionRepository;
 
 @ExtendWith(MockitoExtension.class)
 public class TransactionServiceTest {

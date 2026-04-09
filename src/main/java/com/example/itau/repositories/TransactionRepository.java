@@ -1,8 +1,9 @@
-package com.example.itau.domain;
+package com.example.itau.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import com.example.itau.domain.Transaction;
 import com.example.itau.dtos.StatisticsDTO;
 
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {

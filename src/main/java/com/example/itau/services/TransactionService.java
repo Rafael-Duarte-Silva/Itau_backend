@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.example.itau.domain.Transaction;
-import com.example.itau.domain.TransactionRepository;
 import com.example.itau.dtos.StatisticsDTO;
+import com.example.itau.repositories.TransactionRepository;
 
 @Service
 public class TransactionService {
