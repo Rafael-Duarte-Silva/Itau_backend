@@ -18,7 +18,17 @@
 ## Error Handling
 - https://www.baeldung.com/exception-handling-for-rest-with-spring
 
-# Logs
+## Logs
 
 - https://mmarcosab.medium.com/criando-logs-em-aplica%C3%A7%C3%B5es-spring-boot-29d0ff366193
 - https://docs.spring.io/spring-boot/reference/features/logging.html
+
+## Envs
+
+- https://www.baeldung.com/spring-boot-properties-env-variables
+
+## Datadog
+
+- https://medium.com/@estebanbett/springboot-and-datadog-7edccca33ae3
+- https://docs.spring.io/spring-boot/reference/actuator/metrics.html#actuator.metrics.export.datadog
+- https://medium.com/@AlexanderObregon/adding-health-checks-to-spring-boot-with-custom-indicators-953f0220f463
