@@ -8,3 +8,16 @@ spring:
     sql:
         init:
             mode: always
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: health,info,metrics
+    datadog:
+        metrics:
+            export:
+                enabled: true
+                api-key: ${DD_API_KEY}
+                step: 10s
+                    
