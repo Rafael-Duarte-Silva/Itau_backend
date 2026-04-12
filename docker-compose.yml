@@ -13,7 +13,7 @@ services:
         container_name: datadog-agent
         restart: unless-stopped
         environment:
-            DD_API_KEY: 8620b59c877acbf7272ecd1b10c63ea2
+            DD_API_KEY: ${DD_API_KEY}
             DD_SITE: datadoghq.com
             DD_ENV: dev
             DD_DOGSTATSD_NON_LOCAL_TRAFFIC: "true"
