@@ -2,14 +2,10 @@ package com.example.itau.dtos;
 
 import java.math.BigDecimal;
 
-public interface StatisticsDTO {
-    Long getCount();
+public record StatisticsDTO(Long count,
+        BigDecimal sum,
+        BigDecimal avg,
+        BigDecimal min,
+        BigDecimal max) {
 
-    BigDecimal getSum();
-
-    BigDecimal getAvg();
-
-    BigDecimal getMin();
-
-    BigDecimal getMax();
 }

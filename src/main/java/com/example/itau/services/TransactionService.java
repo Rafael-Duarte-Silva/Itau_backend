@@ -5,21 +5,13 @@ import java.time.OffsetDateTime;
 
 import org.springframework.stereotype.Service;
 
-import com.example.itau.domain.Transaction;
 import com.example.itau.dtos.StatisticsDTO;
-import com.example.itau.repositories.TransactionRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
 public class TransactionService {
-
-    private final TransactionRepository repository;
-
-    public TransactionService(TransactionRepository repository) {
-        this.repository = repository;
-    }
 
     public boolean create(BigDecimal valor, OffsetDateTime dataHora) {
         log.debug("Creating transaction - valor={}, dataHora={}", valor, dataHora);
@@ -30,22 +22,21 @@ public class TransactionService {
             return false;
         }
 
-        Transaction transaction = repository.save(new Transaction(valor, dataHora));
-        log.info("TRANSACTION created - id={}", transaction.getId());
+        // code
 
         return true;
     }
 
     public void deleteAll() {
         log.warn("TRANSACTION delete all requested");
-        repository.deleteAll();
+        // code
         log.info("TRANSACTION all deleted");
     }
 
     public StatisticsDTO getStatistics() {
         log.debug("Fetching statistics");
-        StatisticsDTO stats = repository.getStatistics();
+        // code
         log.info("STATISTICS generated");
-        return stats;
+        return new StatisticsDTO(0L, null, null, null, null);
     }
 }
