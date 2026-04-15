@@ -52,11 +52,4 @@ public class TransactionServiceTest {
 
         assertFalse(result);
     }
-
-    @Test
-    void createTransactionNegativeValorReturnsFalse() {
-        boolean result = service.create(new BigDecimal("-1"), now.minusHours(1));
-
-        assertFalse(result);
-    }
 }

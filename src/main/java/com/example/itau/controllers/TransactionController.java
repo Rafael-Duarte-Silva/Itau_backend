@@ -1,12 +1,14 @@
 package com.example.itau.controllers;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.itau.dtos.StatisticsDTO;
 import com.example.itau.dtos.TransactionCreateDTO;
 import com.example.itau.services.TransactionService;
+
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +24,7 @@ public class TransactionController {
 
     @PostMapping("/transacao")
     public ResponseEntity<Void> createTransaction(
-            @RequestBody @Validated TransactionCreateDTO data) {
+            @RequestBody @Valid TransactionCreateDTO data) {
 
         boolean created = service.create(data.valor(), data.dataHora());
 

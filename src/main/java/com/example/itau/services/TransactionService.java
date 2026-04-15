@@ -20,7 +20,7 @@ public class TransactionService {
         log.debug("Creating transaction - valor={}, dataHora={}", valor, dataHora);
 
         boolean isFuture = dataHora.isAfter(OffsetDateTime.now());
-        if (isFuture || valor.signum() < 0) {
+        if (isFuture) {
             log.warn("TRANSACTION rejected - invalid data. valor={}, dataHora={}", valor, dataHora);
             return false;
         }
