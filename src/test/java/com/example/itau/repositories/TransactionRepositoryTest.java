@@ -22,11 +22,11 @@ class TransactionRepositoryTest {
 
     @Test
     void saveValidTransactionUpdatesStatistics() {
-        Transaction t = new Transaction(
+        Transaction transaction = new Transaction(
                 BigDecimal.valueOf(100),
                 OffsetDateTime.now());
 
-        repository.save(t);
+        repository.save(transaction);
 
         StatisticsDTO stats = repository.getStatistics();
 
