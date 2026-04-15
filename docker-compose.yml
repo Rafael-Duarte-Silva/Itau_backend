@@ -4,14 +4,12 @@ services:
         container_name: datadog-agent
         restart: unless-stopped
         environment:
-            DD_API_KEY: ${DD_API_KEY}
-            DD_SITE: datadoghq.com
-            DD_ENV: dev
-            DD_DOGSTATSD_NON_LOCAL_TRAFFIC: "true"
+            - DD_API_KEY=${DD_API_KEY}
+            - DD_SITE=datadoghq.com
+            - DD_APM_ENABLED=true
         ports:
-            - "127.0.0.1:8126:8126"
+            - "127.0.0.1:8126:8126/tcp"
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock:ro
             - /proc/:/host/proc/:ro
             - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
-            - /var/lib/docker/containers:/var/lib/docker/containers:ro
