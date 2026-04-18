@@ -1,33 +1,45 @@
-# References
+## How to run
 
-## Challenge
+### Dev
+```
+  ./mvnw spring-boot:run
+```
+
+### Test
+```
+   ./mvnw test
+ ```
+
+## References
+
+### Challenge
 - https://github.com/feltex/desafio-itau-backend
 
-## Testing
+### Testing
 - https://medium.com/@smita.s.kothari/unit-testing-in-spring-boot-best-practices-with-sample-code-e483eaa4cc19
 - https://medium.com/@persolenom/testing-spring-boot-controllers-unit-integration-end-to-end-1b1bd19378e2
 
-## Database & SQL
+### Database & SQL
 - https://docs.spring.io/spring-boot/reference/data/sql.html
 - https://medium.com/@AlexanderObregon/running-sql-scripts-automatically-at-spring-boot-startup-62ae2dd03087
 - https://spring.io/guides/gs/accessing-data-mysql
 
-## Docker
+### Docker
 - https://medium.com/@valdemarjuniorr/integra%C3%A7%C3%A3o-com-docker-compose-no-spring-boot-3-1-b0bea36c9549
 
-## Error Handling
+### Error Handling
 - https://www.baeldung.com/exception-handling-for-rest-with-spring
 
-## Logs
+### Logs
 
 - https://mmarcosab.medium.com/criando-logs-em-aplica%C3%A7%C3%B5es-spring-boot-29d0ff366193
 - https://docs.spring.io/spring-boot/reference/features/logging.html
 
-## Envs
+### Envs
 
 - https://www.baeldung.com/spring-boot-properties-env-variables
 
-## Datadog
+### Datadog
 
 - https://medium.com/@estebanbett/springboot-and-datadog-7edccca33ae3
 - https://docs.spring.io/spring-boot/reference/actuator/metrics.html#actuator.metrics.export.datadog
